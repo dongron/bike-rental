@@ -49,3 +49,8 @@ local
 
 # vercel
 .vercel
+
+# other
+
+cypress
+.idea
