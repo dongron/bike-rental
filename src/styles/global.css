@@ -1,4 +1,12 @@
+/*@import '../../node_modules/slick-carousel/slick/slick.css';*/
+/*@import '../../node_modules/slick-carousel/slick/slick-theme.css';*/
+/*@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');*/
+
 @tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
 
 a {
   @apply text-blue-700;
@@ -8,10 +16,6 @@ a:hover {
   @apply border-b-2 border-blue-700;
 }
 
-@tailwind components;
-
-@tailwind utilities;
-
 .content p {
   @apply my-6;
 }
@@ -19,3 +23,78 @@ a:hover {
 .content ul {
   @apply my-6;
 }
+/* Typography */
+
+@font-face {
+  font-family: 'HKGrotesk';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/HKGrotesk-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'HKGrotesk';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/HKGrotesk-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'HKGrotesk';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/HKGrotesk-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'HKGrotesk';
+  font-style: normal;
+  font-weight: 800;
+  src: url('/fonts/HKGrotesk-ExtraBold.woff2') format('woff2');
+}
+
+/*a {*/
+/*  @apply text-blue-700;*/
+/*}*/
+
+/*a:hover {*/
+/*  @apply border-b-2 border-blue-700;*/
+/*}*/
+
+/*.content p {*/
+/*  @apply my-6;*/
+/*}*/
+
+/*.content ul {*/
+/*  @apply my-6;*/
+/*}*/
+
+/** {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*}*/
+
+/*body {*/
+/*  margin: 0 !important;*/
+/*  background: red;*/
+/*  min-height: 100%;*/
+/*  scrollbar-width: none;*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*}*/
+
+/*.body {*/
+/*  font-family: 'HKGrotesk', sans-serif;*/
+/*  margin: 0 !important;*/
+/*  background: red;*/
+/*}*/
+
+/*h1 {*/
+/*  font-family: 'HKGrotesk';*/
+/*  font-weight: 500;*/
+/*}*/
+
+/*p {*/
+/*  font-family: 'Roboto', sans-serif;*/
+/*}*/

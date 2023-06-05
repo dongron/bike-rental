@@ -1,0 +1,33 @@
+.sliderContainer {
+  --sliderPurple: '#943cff';
+  --sliderPink: '#dd45d3';
+  --sliderOrange: '#fc9a57';
+  --white: '#fff';
+
+  text-align: center;
+  background: linear-gradient(210deg, #943cff 0%, #dd45d3 40.13%, #fc9a57 90%);
+  color: white;
+  padding-top: 5rem;
+  padding-bottom: 7rem;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+  max-height: 80vh;
+  font-family: 'HKGrotesk', sans-serif;
+}
+
+.landingPageImage {
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 280px;
+  max-width: 80vw;
+}
+
+.companyName {
+  font-weight: 600 !important;
+  font-size: 2.5rem !important;
+  margin-top: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.companyMotto {
+  margin-top: 0rem !important;
+}

@@ -1,13 +1,10 @@
-import { useRouter } from 'next/router';
-
+import Slider from '@/components/slider/slider';
 import { Meta } from '@/layouts/Meta';
-import { Main } from '@/templates/Main';
+import { Landing } from '@/templates/Landing';
 
 const Index = () => {
-  const router = useRouter();
-
   return (
-    <Main
+    <Landing
       meta={
         <Meta
           title="Next.js Boilerplate Presentation"
@@ -15,12 +12,7 @@ const Index = () => {
         />
       }
     >
-      <a href="https://github.com/ixartz/Next-js-Boilerplate">
-        <img
-          src={`${router.basePath}/assets/images/nextjs-starter-banner.png`}
-          alt="Nextjs starter banner"
-        />
-      </a>
+      <Slider />
       <h2 className="text-2xl font-bold">
         Boilerplate code for your Nextjs project with Tailwind CSS
       </h2>
@@ -179,7 +171,7 @@ const Index = () => {
         </a>{' '}
         on our website to support this project.
       </p>
-    </Main>
+    </Landing>
   );
 };
 
