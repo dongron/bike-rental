@@ -1,3 +1,4 @@
+// This component is imported from old version of the site
 import { useRouter } from 'next/router';
 import React from 'react';
 import Slider from 'react-slick';
