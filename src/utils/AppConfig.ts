@@ -5,6 +5,8 @@ export const appConfig = {
       title: '8 BS',
       description: '8 Bits Space OÜ company website',
       locale: 'en',
+      address: 'Sepapaja 6,Tallinn 15551,Estonia',
+      contactEmail: 'contact@8bits.space',
     },
   },
 };

@@ -1,0 +1,10 @@
+.landingPageImage {
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 280px;
+  max-width: 80vw;
+}
+
+.contactItemTitle {
+  font-weight: 300;
+}

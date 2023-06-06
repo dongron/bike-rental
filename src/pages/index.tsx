@@ -1,3 +1,4 @@
+import { ContactSection } from '@/components/contact-section/contact-section';
 import { LandingGrid } from '@/components/landing-grid/landing-grid';
 import Slider from '@/components/slider/slider';
 import { ContentWrapper } from '@/components/wrappers/content-wrapper';
@@ -20,6 +21,9 @@ const Index = () => {
           <h2 className="my-3 text-center text-3xl font-bold">Services</h2>
           <LandingGrid className="py-6" />
         </>
+      </ContentWrapper>
+      <ContentWrapper>
+        <ContactSection className="mb-12 mt-10" />
       </ContentWrapper>
     </Landing>
   );
