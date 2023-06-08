@@ -36,7 +36,7 @@ const SliderComponent = () => {
               className={`${styles.landingPageImage} pb-3`}
             />
             <h1 className={styles.companyName}>{companyName}</h1>
-            <p className={styles.companyMotto}>Software built for people</p>
+            <p className={styles.companyMotto}>Software bringing you profit</p>
           </div>
         </div>
       </Slider>
