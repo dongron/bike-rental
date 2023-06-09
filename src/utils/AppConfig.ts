@@ -7,6 +7,7 @@ export const appConfig = {
       locale: 'en',
       address: 'Sepapaja 6,Tallinn 15551,Estonia',
       contactEmail: 'contact@8bits.space',
+      salesEmail: 'sales@8bits.space',
     },
   },
 };

@@ -1,6 +1,7 @@
 import { ContactSection } from '@/components/contact-section/contact-section';
+import { CTAButton } from '@/components/cta-button';
 import { LandingGrid } from '@/components/landing-grid/landing-grid';
-import Slider from '@/components/slider/slider';
+import Slider from '@/components/sliders/landing-slider';
 import { ContentWrapper } from '@/components/wrappers/content-wrapper';
 import { Meta } from '@/layouts/Meta';
 import { Landing } from '@/templates/Landing';
@@ -16,7 +17,9 @@ const Index = () => {
         />
       }
     >
-      <Slider />
+      <Slider>
+        <CTAButton />
+      </Slider>
       <ContentWrapper>
         <>
           <h2 className="my-3 text-center text-3xl font-bold">Services</h2>

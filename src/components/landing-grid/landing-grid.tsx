@@ -6,6 +6,30 @@ import { FaShopify, FaWordpressSimple } from 'react-icons/fa';
 import { LandingGridBox } from '@/components/landing-grid/landing-gird-box';
 import { getCMSPath, getEcommercePath, getPWAPath } from '@/routes';
 
+const services = [
+  {
+    title: 'Mobile Web Apps',
+    icon: AiOutlineMobile,
+    url: getPWAPath(),
+    className: '',
+    isVisible: true,
+  },
+  {
+    title: 'Online Store Setup',
+    icon: FaShopify,
+    url: getEcommercePath(),
+    className: '',
+    isVisible: true,
+  },
+  {
+    title: 'Custom Frontend',
+    icon: FaWordpressSimple,
+    url: getCMSPath(),
+    className: '',
+    isVisible: true,
+  },
+];
+
 interface LandingGridProps {
   className?: string;
 }
@@ -17,22 +41,18 @@ const LandingGrid: FC<LandingGridProps> = ({ className }) => {
         className || ''
       }`}
     >
-      <LandingGridBox
-        title="Custom CMS Frontend"
-        Icon={FaWordpressSimple}
-        url={getCMSPath()}
-      />
-      <LandingGridBox
-        title="Mobile Web Apps"
-        Icon={AiOutlineMobile}
-        url={getPWAPath()}
-      />
-      <LandingGridBox
-        className=""
-        title="Online store fronts"
-        Icon={FaShopify}
-        url={getEcommercePath()}
-      />
+      {services.map(
+        (service) =>
+          service.isVisible && (
+            <LandingGridBox
+              key={service.title}
+              title={service.title}
+              Icon={service.icon}
+              url={service.url}
+              className={service.className}
+            />
+          )
+      )}
     </div>
   );
 };

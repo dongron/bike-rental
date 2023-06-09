@@ -1,5 +1,6 @@
 // This component is imported from old version of the site
 import { useRouter } from 'next/router';
+import type { FC, ReactNode } from 'react';
 import React from 'react';
 import Slider from 'react-slick';
 
@@ -21,7 +22,11 @@ const settings = {
   slidesToScroll: 1,
 };
 
-const SliderComponent = () => {
+interface SliderComponentProps {
+  children?: ReactNode;
+}
+
+const SliderComponent: FC<SliderComponentProps> = ({ children }) => {
   const { companyName } = sideMetadata.site.siteMetadata;
 
   const router = useRouter();
@@ -37,6 +42,7 @@ const SliderComponent = () => {
             />
             <h1 className={styles.companyName}>{companyName}</h1>
             <p className={styles.companyMotto}>Software bringing you profit</p>
+            {children}
           </div>
         </div>
       </Slider>
