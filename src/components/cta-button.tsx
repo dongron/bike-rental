@@ -1,21 +1,7 @@
 import type { FC, ReactNode } from 'react';
 
+import { Theme } from '@/types/theme';
 import { appConfig } from '@/utils/AppConfig';
-import { createEmailUrl } from '@/utils/create-email-url';
-
-enum Theme {
-  dark = 'dark',
-  light = 'light',
-}
-
-const generalSalesEmailConfig = createEmailUrl({
-  email: appConfig.site.siteMetadata.salesEmail,
-  subject: 'Service quotation',
-  body: `Hello 8 Bits Space! 
-  \nI am interested in ... 
-  \nLooking forward to hearing from you 
-Partner XYZ`,
-});
 
 interface CTAButtonProps {
   children?: ReactNode;
@@ -28,7 +14,7 @@ const CTAButton: FC<CTAButtonProps> = ({
   children = 'Request a Quote',
   className,
   theme = Theme.light,
-  url = generalSalesEmailConfig,
+  url = appConfig.emails.generalSalesEmail,
 }) => {
   const baseStyles =
     theme === Theme.light
