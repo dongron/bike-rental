@@ -2,34 +2,37 @@ import type { FC } from 'react';
 import React from 'react';
 import { AiOutlineMobile } from 'react-icons/ai';
 import { FaShopify, FaWordpressSimple } from 'react-icons/fa';
+import { SiWebflow } from 'react-icons/si';
 
 import { LandingGridBox } from '@/components/landing-grid/landing-gird-box';
-import {
-  getCMSPath,
-  getEcommercePath,
-  getLandingPath,
-  getPWAPath,
-} from '@/routes';
+import { getCMSPath, getEcommercePath, getPWAPath } from '@/routes';
 
 const services = [
   {
     title: 'Mobile Web Apps',
     icon: AiOutlineMobile,
-    url: getLandingPath() || getPWAPath(),
+    url: getPWAPath(),
     className: '',
     isVisible: true,
   },
   {
     title: 'Online Store Setup',
     icon: FaShopify,
-    url: getLandingPath() || getEcommercePath(),
+    url: getEcommercePath(),
+    className: '',
+    isVisible: true,
+  },
+  {
+    title: 'Webflow',
+    icon: SiWebflow,
+    url: getEcommercePath(),
     className: '',
     isVisible: true,
   },
   {
     title: 'Custom Frontend',
     icon: FaWordpressSimple,
-    url: getLandingPath() || getCMSPath(),
+    url: getCMSPath(),
     className: '',
     isVisible: true,
   },
