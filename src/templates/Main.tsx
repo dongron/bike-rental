@@ -13,7 +13,7 @@ const Main = (props: IMainProps) => (
     {props.meta}
 
     <div className="">
-      <Navbar className="hidden" />
+      <Navbar />
 
       <main className="content text-xl">{props.children}</main>
 
