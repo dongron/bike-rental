@@ -27,7 +27,7 @@ const services = [
     icon: SiWebflow,
     url: getEcommercePath(),
     className: '',
-    isVisible: true,
+    isVisible: false,
   },
   {
     title: 'Custom Frontend',

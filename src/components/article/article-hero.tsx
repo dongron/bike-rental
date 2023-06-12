@@ -16,12 +16,15 @@ const ArticleHero: FC<ArticleHeroProps> = ({ title, questions, imageUrl }) => {
   return (
     <ArticleSlider>
       {imageUrl && (
-        <img src={imageUrl} className={`${styles.landingPageImage} pb-3`} />
+        <img
+          src={imageUrl}
+          className={`${styles.landingPageImage} !h-40 pb-3`}
+        />
       )}
       <ArticleTitle className={styles.companyName}>{title}</ArticleTitle>
       {questions?.map((question: string) => (
         <ArticleQuestion key={question} className={styles.companyMotto}>
-          question
+          {question}
         </ArticleQuestion>
       ))}
     </ArticleSlider>

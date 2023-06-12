@@ -3,9 +3,15 @@ import type { FC } from 'react';
 
 import { getAboutPath, getBlogExternalPath, getLandingPath } from '@/routes';
 
-const Navbar: FC<any> = () => {
+interface NavbarProps {
+  className?: string;
+}
+
+const Navbar: FC<NavbarProps> = ({ className }) => {
   return (
-    <nav className="absolute inset-x-0 top-2 z-10 mx-auto max-w-screen-md">
+    <nav
+      className={`absolute inset-x-0 top-2 z-10 mx-auto max-w-screen-md ${className}`}
+    >
       <ul className="flex flex-wrap text-xl">
         <li className="mr-6">
           <Link

@@ -8,6 +8,32 @@
 
 @tailwind utilities;
 
+@layer base {
+  h1 {
+    @apply text-2xl;
+    @apply py-4;
+  }
+  h2 {
+    @apply text-xl;
+    @apply py-4;
+  }
+  h3 {
+    @apply text-lg;
+    @apply py-4;
+  }
+  p {
+    @apply text-inherit;
+    @apply py-2;
+  }
+  ul {
+    @apply list-disc;
+  }
+  ul li {
+    @apply ml-4;
+    @apply py-1;
+  }
+}
+
 a {
   @apply text-blue-700;
 }

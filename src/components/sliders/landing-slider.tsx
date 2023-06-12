@@ -40,8 +40,10 @@ const SliderComponent: FC<SliderComponentProps> = ({ children }) => {
               src={`${router.basePath}/assets/images/undraw_work_together_h63l.svg`}
               className={`${styles.landingPageImage} pb-3`}
             />
-            <h1 className={styles.companyName}>{companyName}</h1>
-            <p className={styles.companyMotto}>Software bringing you profit</p>
+            <h1 className={`p-0 ${styles.companyName}`}>{companyName}</h1>
+            <p className={`p-0 ${styles.companyMotto}`}>
+              Software bringing you profit
+            </p>
             {children}
           </div>
         </div>

@@ -19,15 +19,12 @@ interface ArticleSliderProps {
   children?: ReactNode;
 }
 
-const ArticleSlider: FC<ArticleSliderProps> = ({ imageUrl, children }) => {
+const ArticleSlider: FC<ArticleSliderProps> = ({ children }) => {
   return (
-    <div className={styles.sliderContainer}>
+    <div className={`${styles.sliderContainer} !pt-10`}>
       <Slider {...settings}>
         <div className="slider-content">
-          <div className="text-center">
-            <img src={imageUrl} className={`${styles.landingPageImage} pb-3`} />
-            {children}
-          </div>
+          <div className="text-center">{children}</div>
         </div>
       </Slider>
     </div>

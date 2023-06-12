@@ -23,12 +23,12 @@ const ContactSection: FC<ContactSectionProps> = ({ className }) => {
         />
       </div>
 
-      <h2 className="mb-2 mt-8 text-center text-2xl font-bold text-gray-900">
+      <h2 className="pb-2 pt-8 text-center text-2xl font-bold text-gray-900">
         {appConfig.site.siteMetadata.companyName}
       </h2>
 
       {appConfig.site?.siteMetadata?.address && (
-        <p className="text-center text-base">
+        <p className="py-0 text-center text-base">
           {appConfig.site?.siteMetadata?.address
             ?.split(',')
             .map((addressRow) => (

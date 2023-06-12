@@ -22,7 +22,7 @@ const LandingGridBox: FC<LandingGridProps> = ({
   return (
     <div className={`${className}`}>
       <Icon className="mx-auto" size={30} color={iconColor} />
-      <h3 className="mx-auto mt-4 text-center font-bold">
+      <h3 className="mx-auto mt-4 p-0 text-center text-xl font-bold">
         {title}{' '}
         {url && (
           <FaArrowRight className="mx-auto ml-1 inline pb-0.5" size={18} />

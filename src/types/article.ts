@@ -5,6 +5,11 @@ interface Article {
   author?: [];
   tags?: any[];
   body: any;
+  imageUrl?: string;
+  meta: {
+    title?: string;
+    description?: string;
+  };
 }
 
 export type { Article };
