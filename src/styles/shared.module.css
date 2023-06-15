@@ -1,11 +1,12 @@
 .backgroundGradient {
   background: linear-gradient(210deg, #943cff 0%, #dd45d3 40.13%, #fc9a57 90%);
   backdrop-filter: brightness(1.8);
+  position: relative;
 }
 
 .backgroundGradient:after {
   content: '';
-  position: fixed;
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;

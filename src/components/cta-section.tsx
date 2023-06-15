@@ -12,8 +12,8 @@ interface CTASectionProps {
 
 const CTASection: FC<CTASectionProps> = ({ className = '' }) => {
   return (
-    <div className={`mb-12 mt-10 ${className}`}>
-      <ContentWrapper className={`w-full ${styles.backgroundGradient} `}>
+    <div className={`mb-12 mt-10 ${styles.backgroundGradient} ${className}`}>
+      <ContentWrapper className={`w-full `}>
         <>
           <h2 className="text-center">
             Ready to take your web app to the next level? Start transforming
