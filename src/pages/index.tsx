@@ -1,6 +1,7 @@
 import { AboutUsSection } from '@/components/about-us-section';
 import { ContactSection } from '@/components/contact-section/contact-section';
 import { CTAButton } from '@/components/cta-button';
+import { CTASection } from '@/components/cta-section';
 import { LandingGrid } from '@/components/landing-grid/landing-grid';
 import Slider from '@/components/sliders/landing-slider';
 import { ContentWrapper } from '@/components/wrappers/content-wrapper';
@@ -19,7 +20,7 @@ const Index = () => {
       }
     >
       <Slider>
-        <CTAButton />
+        <CTAButton className="mb-0" />
       </Slider>
 
       <ContentWrapper>
@@ -32,6 +33,8 @@ const Index = () => {
       <ContentWrapper>
         <AboutUsSection className="mb-20 mt-10" />
       </ContentWrapper>
+
+      <CTASection className="mb-12 mt-10" />
 
       <ContentWrapper>
         <ContactSection className="mb-12 mt-10" />
