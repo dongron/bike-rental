@@ -14,14 +14,15 @@
     @apply py-4;
   }
   h2 {
-    @apply text-xl;
+    @apply text-2xl;
     @apply py-4;
   }
   h3 {
-    @apply text-lg;
+    @apply text-xl;
     @apply py-4;
   }
   p {
+    @apply text-lg;
     @apply text-inherit;
     @apply py-2;
   }
@@ -29,6 +30,7 @@
     @apply list-disc;
   }
   ul li {
+    @apply text-lg;
     @apply ml-4;
     @apply py-1;
   }

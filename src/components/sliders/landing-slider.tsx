@@ -41,9 +41,9 @@ const SliderComponent: FC<SliderComponentProps> = ({ children }) => {
               className={`${styles.landingPageImage} pb-3`}
             />
             <h1 className={`p-0 ${styles.companyName}`}>{companyName}</h1>
-            <p className={`p-0 ${styles.companyMotto}`}>
+            <h3 className={`p-0 ${styles.companyMotto}`}>
               Software bringing you profit
-            </p>
+            </h3>
             {children}
           </div>
         </div>
