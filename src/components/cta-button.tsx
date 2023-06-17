@@ -13,6 +13,9 @@ interface CTAButtonProps {
   className?: string;
   theme?: Theme;
   url?: string;
+  type?: string;
+  onClick?: (e: any) => void;
+  disabled?: boolean;
 }
 
 const CTAButton: FC<CTAButtonProps> = ({
@@ -20,6 +23,9 @@ const CTAButton: FC<CTAButtonProps> = ({
   className,
   theme = Theme.light,
   url = appConfig.emails.generalSalesEmail,
+  type = 'button',
+  onClick,
+  disabled = false,
 }) => {
   const baseStyles =
     theme === Theme.light
@@ -28,8 +34,23 @@ const CTAButton: FC<CTAButtonProps> = ({
       : ` ${generalBaseStyles} bg-brandOrangeDefault text-black  
       hover:bg-brandOrange-600 hover:text-gray-800`;
 
-  return (
-    <a type="button" className={`${baseStyles} ${className}`} href={url}>
+  return type === 'submit' || onClick ? (
+    // to prevent reload
+    <button
+      type="submit"
+      className={`${baseStyles} ${className}`}
+      onClick={onClick}
+      disabled={disabled}
+    >
+      {children}
+    </button>
+  ) : (
+    <a
+      type={type}
+      className={`${baseStyles} ${className}`}
+      href={url || ''}
+      onClick={(event) => (disabled ? event.preventDefault() : {})}
+    >
       {children}
     </a>
   );
