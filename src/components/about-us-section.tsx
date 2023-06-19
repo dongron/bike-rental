@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-const aboutHeader = `What is 8 Bits Space?`;
+const aboutHeader = `About 8 Bits Space`;
 
 const aboutBodySections = [
   `We are a company established in Estonia in November 2019, with a main focus on developing custom, high-quality software in the shortest possible time.`,
@@ -19,7 +19,7 @@ const AboutUsSection: FC<AboutUsSectionProps> = ({ className }) => {
     <div className={className || ''}>
       <h1 className="mb-4 text-center font-bold">{aboutHeader}</h1>
       {aboutBodySections.map((section: string, idx: number) => (
-        // eslint-disable-next-line react/no-array-index-key
+        // eslint-disable-next-line react/no-array-index-key,react/no-danger
         <p key={idx} dangerouslySetInnerHTML={{ __html: section }} />
       ))}
     </div>

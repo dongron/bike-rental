@@ -1,4 +1,5 @@
-
+# 8 Bits Space page. 
+Requirements: node 18.x
 
 
 ---

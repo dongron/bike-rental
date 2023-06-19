@@ -1,4 +1,5 @@
 import { AboutUsSection } from '@/components/about-us-section';
+import Contact from '@/components/contact/contact';
 import { ContactSection } from '@/components/contact-section/contact-section';
 import { CTAButton } from '@/components/cta-button';
 import { CTASection } from '@/components/cta-section';
@@ -20,12 +21,14 @@ const Index = () => {
       }
     >
       <Slider>
-        <CTAButton className="mb-0" />
+        <Contact source="landing-header">
+          <CTAButton className="mb-0" />
+        </Contact>
       </Slider>
 
       <ContentWrapper>
         <>
-          <h2 className="my-3 text-center text-3xl font-bold">Services</h2>
+          <h2 className="my-3 text-center text-3xl font-bold">What we offer</h2>
           <LandingGrid className="py-6" />
         </>
       </ContentWrapper>

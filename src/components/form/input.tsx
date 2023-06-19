@@ -1,10 +1,9 @@
 import type { FC } from 'react';
-import { useEffect } from 'react';
 
-const inputStyles = `
-bg-white py-1.5 px-2.5 rounded-xl border-transparent ring-1 ring-brandOrange-500 text-lg
+const defaultInputStyles = `
+w-full bg-white py-1.5 px-2.5 rounded-xl border-transparent ring-1 ring-brandOrange-500 text-lg
 focus:text-black focus:ring-2 focus:ring-brandOrange-900 focus:outline-none focus:border-none focus:border-transparent
-focus:invalid:border-pink-500 focus:invalid:ring-pink-500
+focus:invalid:border-red-500 focus:invalid:ring-red-500
 disabled:bg-gray-200 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
 `;
 
@@ -26,7 +25,7 @@ const Input: FC<InputProps> = ({
   name,
   label,
   options,
-  className,
+  className = '',
   placeholder,
   type = 'text',
   disabled = false,
@@ -34,13 +33,18 @@ const Input: FC<InputProps> = ({
 }) => {
   const inputId = `${name}-input`;
 
-  useEffect(() => {
-    console.log(name, errors[name], errors);
-  }, [errors]);
+  const errorMessage = errors?.[name]?.message;
+  const inputStyles = `${defaultInputStyles} ${
+    errorMessage &&
+    'border-red-500 ring-red-500 focus:border-red-500 focus:ring-red-500'
+  }`;
 
   return (
-    <div className={`my-3 block${className}`}>
-      <label htmlFor={inputId} className="ml-1 block text-sm font-semibold">
+    <div className={`my-3 mb-3.5 block w-full ${className}`}>
+      <label
+        htmlFor={inputId}
+        className="mb-1 ml-1 mt-0.5 block text-left text-sm font-semibold"
+      >
         {label || name.charAt(0).toUpperCase() + name.slice(1)}
       </label>
       {type === 'textarea' ? (
@@ -65,6 +69,9 @@ const Input: FC<InputProps> = ({
           {...register(name, options)}
         />
       )}
+      <div className="mb-0 ml-1 block h-1 text-left text-xs font-medium text-red-500">
+        {errorMessage}
+      </div>
     </div>
   );
 };

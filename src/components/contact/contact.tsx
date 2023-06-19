@@ -1,12 +1,10 @@
 import axios from 'axios';
-import { useState } from 'react';
+import type { FC, JSXElementConstructor, ReactElement } from 'react';
+import { cloneElement, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
 import { ContactForm } from '@/components/contact/contact-form';
 import { SimpleDialog } from '@/components/simple-dialog';
-import { ContentWrapper } from '@/components/wrappers/content-wrapper';
-import { Meta } from '@/layouts/Meta';
-import { Main } from '@/templates/Main';
 import type { RequestStatusType } from '@/utils/request-status';
 import { RequestStatus } from '@/utils/request-status';
 
@@ -15,16 +13,22 @@ type RequestType = {
   status: RequestStatusType;
 };
 
-const Contact = () => {
+type ContactProps = {
+  children: ReactElement<any, string | JSXElementConstructor<any>>;
+  source?: string;
+};
+
+const Contact: FC<ContactProps> = ({ source, children }) => {
   const [request, setRequest] = useState<RequestType>({ status: null });
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [resetForm, setResetForm] = useState<number | undefined>();
 
   const onSubmit = async (data: any) => {
     setRequest({ status: RequestStatus.status.FETCHING });
     await axios({
       url: `/api/contact/`,
       method: 'POST',
-      data,
+      data: { ...data, source },
     })
       .then((response: any) => {
         setRequest({ status: RequestStatus.status.DONE });
@@ -36,31 +40,29 @@ const Contact = () => {
       });
   };
 
-  return (
-    <Main meta={<Meta title="Contact" description="Contact form" />}>
-      <ContentWrapper>
-        <>
-          <button
-            type="button"
-            className="mx-auto mt-52 w-full border-2"
-            onClick={() => setIsDialogOpen(true)}
-          >
-            Open contact
-          </button>
+  useEffect(() => {
+    if (!isDialogOpen) setResetForm(new Date().getTime());
+  }, [isDialogOpen]);
 
-          <SimpleDialog
-            dialogId={dialogId}
-            open={isDialogOpen}
-            setOpen={setIsDialogOpen}
-          >
-            <>
-              <div className="">Contact</div>
-              <ContactForm onSubmit={onSubmit} requestStatus={request.status} />
-            </>
-          </SimpleDialog>
+  return (
+    <>
+      <SimpleDialog
+        dialogId={dialogId}
+        open={isDialogOpen}
+        setOpen={setIsDialogOpen}
+        requestStatus={request.status}
+      >
+        <>
+          <h2 className="my-0 pt-1">Connect with Our Team</h2>
+          <ContactForm
+            onSubmit={onSubmit}
+            requestStatus={request.status}
+            triggerReset={resetForm}
+          />
         </>
-      </ContentWrapper>
-    </Main>
+      </SimpleDialog>
+      {cloneElement(children, { onClick: () => setIsDialogOpen(true) })}
+    </>
   );
 };
 

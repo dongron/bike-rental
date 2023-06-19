@@ -1,15 +1,24 @@
 import type { FC } from 'react';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { VscLoading } from 'react-icons/vsc';
 
 import { CTAButton } from '@/components/cta-button';
+import { required } from '@/consts/validation-messages';
 import { Theme } from '@/types/theme';
 import type { RequestStatusType } from '@/utils/request-status';
 import { RequestStatus } from '@/utils/request-status';
 
-import { Input } from './form/input';
+import { Input } from '../form/input';
 
-const defaultValues = {
+type DefaultValuesType = {
+  name?: string;
+  email?: string;
+  subject?: string;
+  message?: string;
+};
+
+const defaultValuesEmpty: DefaultValuesType = {
   name: '',
   email: '',
   subject: '',
@@ -21,27 +30,40 @@ const formId = 'contact-form';
 type ContactFormProps = {
   onSubmit: (data: any, helpers: any) => void;
   requestStatus?: RequestStatusType;
+  defaultValues?: DefaultValuesType;
+  triggerReset?: number;
 };
 
-const ContactForm: FC<ContactFormProps> = ({ onSubmit, requestStatus }) => {
+const ContactForm: FC<ContactFormProps> = ({
+  onSubmit,
+  requestStatus,
+  defaultValues: defaultValuesFromProps,
+  triggerReset,
+}) => {
+  const defaultValues = { ...defaultValuesEmpty, ...defaultValuesFromProps };
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
-    // setError,
   } = useForm({
     defaultValues,
   });
 
+  useEffect(() => {
+    if (triggerReset) reset();
+  }, [triggerReset]);
+
   const isFetching = RequestStatus.isFetching(requestStatus);
 
   return (
-    <div className="m-auto max-w-screen-md text-center">
+    <div className="m-auto w-full max-w-screen-md text-center">
       <form id={formId} onSubmit={handleSubmit(onSubmit)}>
         <Input
           register={register}
           name="name"
-          options={{ required: true }}
+          options={{ required }}
           errors={errors}
           placeholder="John Doe"
           disabled={isFetching}
@@ -49,7 +71,7 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit, requestStatus }) => {
         <Input
           register={register}
           name="email"
-          options={{ required: true }}
+          options={{ required }}
           errors={errors}
           placeholder="me@gmail.com"
           disabled={isFetching}
@@ -57,7 +79,7 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit, requestStatus }) => {
         <Input
           register={register}
           name="subject"
-          options={{ required: true }}
+          options={{ required }}
           errors={errors}
           placeholder="Subject"
           disabled={isFetching}
@@ -65,7 +87,7 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit, requestStatus }) => {
         <Input
           register={register}
           name="message"
-          options={{ required: true }}
+          options={{ required }}
           type="textarea"
           errors={errors}
           placeholder="I would like to ..."
@@ -76,7 +98,7 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit, requestStatus }) => {
             type="submit"
             theme={Theme.dark}
             disabled={isFetching}
-            className="min-w-[150px]"
+            className="mb-1.5 mt-2 min-w-[150px]"
           >
             {isFetching ? (
               <VscLoading

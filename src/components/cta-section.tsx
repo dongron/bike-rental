@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 
+import Contact from '@/components/contact/contact';
 import { CTAButton } from '@/components/cta-button';
 import { ContentWrapper } from '@/components/wrappers/content-wrapper';
 import { Theme } from '@/types/theme';
@@ -20,9 +21,11 @@ const CTASection: FC<CTASectionProps> = ({ className = '' }) => {
             your business today!
           </h2>
           <div className="flex w-full flex-wrap justify-center ">
-            <CTAButton theme={Theme.dark} className="mt-1">
-              Get started now!
-            </CTAButton>
+            <Contact source="landing-CTA-section">
+              <CTAButton theme={Theme.dark} className="mt-1">
+                Get started now!
+              </CTAButton>
+            </Contact>
           </div>
         </>
       </ContentWrapper>

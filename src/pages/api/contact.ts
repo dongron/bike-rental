@@ -12,7 +12,7 @@ const handler = async (
   res: NextApiResponse<ResponseData>
 ) => {
   if (req.method === 'POST') {
-    const { name, email, subject, message } = req.body as any;
+    const { name, email, subject, message, source } = req.body as any;
     if (!name || !email || !subject || !message) {
       return res.status(400).json({ message: 'Missing values' });
     }
@@ -21,7 +21,9 @@ const handler = async (
         ...emailOptions,
         subject: `${subject} /${name}`,
         from: email,
-        html: `<h1>Request from ${name}, ${email}</h1> <p>${message}</p>`,
+        html: `<h1>Request from ${name}, ${email}</h1> <p>${message}</p> <p>${
+          source || ''
+        }</p> `,
       };
       await transporter.sendMail(mail);
       return res.status(200).json({ message: 'Email sent' });
