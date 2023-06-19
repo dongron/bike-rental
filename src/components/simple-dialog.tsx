@@ -60,7 +60,7 @@ const SimpleDialog: FC<SimpleDialogProps> = ({
       ref={(node) => {
         dialogRef.current = node;
       }}
-      className="my-10 h-max w-[60vw] max-w-screen-md rounded-xl p-0 shadow-2xl"
+      className="my-9 h-max w-[90vw] max-w-screen-md rounded-xl p-0 shadow-2xl md:my-10 md:h-max md:w-[60vw]"
       id={dialogId}
       onClick={handleDialogClick}
     >
