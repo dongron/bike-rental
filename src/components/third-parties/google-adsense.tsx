@@ -1,3 +1,5 @@
+import Script from 'next/script';
+
 const GoogleAdsense = () => {
   const clientId = process.env.NEXT_PUBLIC_GOOGLE_AD_CLIENT;
   const isEnabledOnPageLevel =
@@ -5,17 +7,17 @@ const GoogleAdsense = () => {
 
   return (
     <>
-      <script
+      <Script
         async
         src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${clientId}`}
         crossOrigin="anonymous"
       />
-      <script>
+      <Script id="google-adsens">
         {`(adsbygoogle = window.adsbygoogle || []).push({
           google_ad_client: "${clientId}",
           enable_page_level_ads: ${isEnabledOnPageLevel}
           });`}
-      </script>
+      </Script>
     </>
   );
 };
