@@ -6,7 +6,7 @@ interface ArticleQuestionProps {
 }
 
 const ArticleQuestion: FC<ArticleQuestionProps> = ({ children, className }) => {
-  return <h2 className={className}>{children}</h2>;
+  return <h2 className={`py-0.5 ${className}`}>{children}</h2>;
 };
 
 export { ArticleQuestion };

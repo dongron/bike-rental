@@ -1,17 +1,18 @@
 import type { FC } from 'react';
 import React from 'react';
 import { AiOutlineMobile } from 'react-icons/ai';
+import { BsCodeSlash } from 'react-icons/bs';
 import { FaShopify, FaWordpressSimple } from 'react-icons/fa';
 import { SiWebflow } from 'react-icons/si';
 
 import { LandingGridBox } from '@/components/landing-grid/landing-gird-box';
-import { getCMSPath, getEcommercePath, getPWAPath } from '@/routes';
+import { getCMSPath, getCustomAppsPath, getEcommercePath } from '@/routes';
 
 const services = [
   {
-    title: 'Mobile Web Apps',
-    icon: AiOutlineMobile,
-    url: getPWAPath(),
+    title: 'Custom Web Apps',
+    icons: [BsCodeSlash, AiOutlineMobile],
+    url: getCustomAppsPath(),
     className: '',
     isVisible: true,
   },
@@ -30,8 +31,8 @@ const services = [
     isVisible: false,
   },
   {
-    title: 'Custom Frontend',
-    icon: FaWordpressSimple,
+    title: 'Integrated Frontend',
+    icons: [FaShopify, SiWebflow, FaWordpressSimple],
     url: getCMSPath(),
     className: '',
     isVisible: true,
@@ -56,6 +57,7 @@ const LandingGrid: FC<LandingGridProps> = ({ className }) => {
               key={service.title}
               title={service.title}
               Icon={service.icon}
+              icons={service.icons}
               url={service.url}
               className={service.className}
             />
