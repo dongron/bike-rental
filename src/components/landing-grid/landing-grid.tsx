@@ -7,8 +7,8 @@ import { SiWebflow } from 'react-icons/si';
 
 import { LandingGridBox } from '@/components/landing-grid/landing-gird-box';
 import {
-  getCMSPath,
   getCustomAppsPath,
+  getCustomTemplatesPath,
   getEcommercePath,
   getShopifyPath,
 } from '@/routes';
@@ -38,7 +38,7 @@ const services = [
   {
     title: 'Integrated Frontend',
     icons: [FaShopify, SiWebflow, FaWordpressSimple],
-    url: getCMSPath(),
+    url: getCustomTemplatesPath(),
     className: '',
     isVisible: true,
   },
