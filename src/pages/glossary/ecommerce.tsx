@@ -1,5 +1,3 @@
-import { useRouter } from 'next/router';
-
 import { ArticleBody } from '@/components/article/article-body';
 import { ArticleHero } from '@/components/article/article-hero';
 import { ContactSection } from '@/components/contact-section/contact-section';
@@ -42,8 +40,6 @@ const articleData: Article = {
 };
 
 const Ecommerce = () => {
-  const router = useRouter();
-
   return (
     <Main
       meta={
@@ -56,7 +52,6 @@ const Ecommerce = () => {
       <ArticleHero
         title={articleData.title}
         questions={articleData.questions}
-        imageUrl={`${router.basePath}${articleData.imageUrl}`}
       />
       <ContentWrapper>
         <>

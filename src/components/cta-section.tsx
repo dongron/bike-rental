@@ -13,12 +13,14 @@ interface CTASectionProps {
 
 const CTASection: FC<CTASectionProps> = ({ className = '' }) => {
   return (
-    <div className={`mb-12 mt-10 ${styles.backgroundGradient} ${className}`}>
-      <ContentWrapper className={`w-full `}>
+    <div className={`mb-14 mt-10 ${styles.backgroundGradient} ${className}`}>
+      <ContentWrapper className="w-full py-3">
         <>
           <h2 className="text-center">
-            Ready to take your web app to the next level? Start transforming
-            your business today!
+            <span className="block lg:inline">
+              Ready to take your web app to the next level?{' '}
+            </span>
+            <span>Start transforming your business today!</span>
           </h2>
           <div className="flex w-full flex-wrap justify-center ">
             <Contact source="landing-CTA-section">

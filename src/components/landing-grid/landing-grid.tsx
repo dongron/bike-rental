@@ -6,7 +6,12 @@ import { FaShopify, FaWordpressSimple } from 'react-icons/fa';
 import { SiWebflow } from 'react-icons/si';
 
 import { LandingGridBox } from '@/components/landing-grid/landing-gird-box';
-import { getCMSPath, getCustomAppsPath, getEcommercePath } from '@/routes';
+import {
+  getCMSPath,
+  getCustomAppsPath,
+  getEcommercePath,
+  getShopifyPath,
+} from '@/routes';
 
 const services = [
   {
@@ -19,7 +24,7 @@ const services = [
   {
     title: 'Online Store Setup',
     icon: FaShopify,
-    url: getEcommercePath(),
+    url: getShopifyPath(),
     className: '',
     isVisible: true,
   },
