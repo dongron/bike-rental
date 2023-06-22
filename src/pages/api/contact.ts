@@ -30,6 +30,8 @@ const handler = async (
     } catch (err: any) {
       return res.status(400).json({ message: err.message });
     }
+  } else if (req.method === 'GET') {
+    return res.status(200).json({ message: 'Success' });
   } else {
     return res.status(404).json({ message: 'Not found' });
   }
