@@ -7,6 +7,7 @@ import { LandingGrid } from '@/components/landing-grid/landing-grid';
 import Slider from '@/components/sliders/landing-slider';
 import { ContentWrapper } from '@/components/wrappers/content-wrapper';
 import { Meta } from '@/layouts/Meta';
+import animations from '@/styles/animations.module.css';
 import { Landing } from '@/templates/Landing';
 import { appConfig } from '@/utils/AppConfig';
 
@@ -22,7 +23,9 @@ const Index = () => {
     >
       <Slider>
         <Contact source="landing-header">
-          <CTAButton className="my-9">Talk to Our Team</CTAButton>
+          <CTAButton className={`my-9 ${animations.animateHeroCTA}`}>
+            Talk to Our Team
+          </CTAButton>
         </Contact>
       </Slider>
 
