@@ -31,8 +31,8 @@ const CTAButton: FC<CTAButtonProps> = ({
     theme === Theme.light
       ? `${generalBaseStyles} bg-white text-gray-800  
       hover:bg-gray-100 hover:text-gray-900`
-      : ` ${generalBaseStyles} bg-brandOrangeDefault text-black  
-      hover:bg-brandOrange-600 hover:text-gray-800`;
+      : ` ${generalBaseStyles} bg-brandOrange-600 text-white  
+      hover:bg-brandOrange-700 hover:text-white`;
 
   return type === 'submit' || onClick ? (
     // to prevent reload

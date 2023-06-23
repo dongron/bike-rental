@@ -1,10 +1,9 @@
 import type { FC } from 'react';
 
-const defaultInputStyles = `
-w-full bg-white py-1.5 px-2.5 rounded-xl border-transparent ring-1 ring-brandOrange-500 text-lg
-focus:text-black focus:ring-2 focus:ring-brandOrange-900 focus:outline-none focus:border-none focus:border-transparent
+const defaultInputStyles = `w-full bg-white py-1.5 px-2.5 rounded-xl font-medium text-lg text-gray-700 border border-gray-300 
+focus:text-gray-900 focus:ring-brandOrange-300 focus:border-brandOrange-300 focus:outline-none block
 focus:invalid:border-red-500 focus:invalid:ring-red-500
-disabled:bg-gray-200 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+disabled:bg-gray-200 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none 
 `;
 
 type InputProps = {
@@ -36,7 +35,7 @@ const Input: FC<InputProps> = ({
   const errorMessage = errors?.[name]?.message;
   const inputStyles = `${defaultInputStyles} ${
     errorMessage &&
-    'border-red-500 ring-red-500 focus:border-red-500 focus:ring-red-500'
+    'border-red-500 ring-red-500 focus:border-red-400 focus:ring-red-400'
   }`;
 
   return (

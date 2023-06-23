@@ -53,7 +53,7 @@ const Contact: FC<ContactProps> = ({ source, children }) => {
         requestStatus={request.status}
       >
         <>
-          <h2 className="my-0 pt-1">Connect with Our Team</h2>
+          <h2 className="my-0 pt-1 font-semibold">Connect with Our Team</h2>
           <ContactForm
             onSubmit={onSubmit}
             requestStatus={request.status}
