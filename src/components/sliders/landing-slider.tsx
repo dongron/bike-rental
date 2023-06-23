@@ -32,7 +32,9 @@ const SliderComponent: FC<SliderComponentProps> = ({ children }) => {
   const router = useRouter();
 
   return (
-    <div className={styles.sliderContainer}>
+    <div
+      className={`${styles.sliderContainer} ${styles.landingSliderContainer}`}
+    >
       <Slider {...settings}>
         <div className="slider-content">
           <div className="text-center">

@@ -22,7 +22,7 @@ const Index = () => {
     >
       <Slider>
         <Contact source="landing-header">
-          <CTAButton className="mb-0">Talk to Our Team</CTAButton>
+          <CTAButton className="my-9">Talk to Our Team</CTAButton>
         </Contact>
       </Slider>
 

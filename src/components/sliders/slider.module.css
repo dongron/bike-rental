@@ -13,6 +13,15 @@
   font-family: 'HKGrotesk', sans-serif;
 }
 
+.landingSliderContainer {
+  min-height: 100vh;
+  padding-top: 0;
+  padding-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .landingPageImage {
   margin-left: auto;
   margin-right: auto;
