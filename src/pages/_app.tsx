@@ -4,6 +4,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import type { AppProps } from 'next/app';
 import { ToastContainer } from 'react-toastify';
 
+import { GoogleAdsense } from '@/components/third-parties/google-adsense';
+import { GoogleAnalytics } from '@/components/third-parties/google-analytics';
+
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <>
     <ToastContainer
@@ -16,6 +19,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
       closeButton={false}
     />
     <Component {...pageProps} />
+    <GoogleAnalytics />
+    <GoogleAdsense />
   </>
 );
 

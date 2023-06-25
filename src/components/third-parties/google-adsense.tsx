@@ -11,6 +11,7 @@ const GoogleAdsense = () => {
         async
         src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${clientId}`}
         crossOrigin="anonymous"
+        strategy="lazyOnload"
       />
       <Script id="google-adsens">
         {`(adsbygoogle = window.adsbygoogle || []).push({

@@ -1,7 +1,5 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
-import { GoogleAdsense } from '@/components/third-parties/google-adsense';
-import { GoogleAnalytics } from '@/components/third-parties/google-analytics';
 import { AppConfig } from '@/utils/AppConfig';
 
 // Need to create a custom _document because i18n support is not compatible with `next export`.
@@ -30,8 +28,6 @@ class MyDocument extends Document {
             href="/favicon-16x16.png"
           />
           <meta name="theme-color" content="#943cff" />
-          <GoogleAnalytics />
-          <GoogleAdsense />
         </Head>
         <body>
           <Main />

@@ -10,6 +10,7 @@ const GoogleAnalytics = () => {
       <Script
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${gtagId}`}
+        strategy="lazyOnload"
       />
       <Script id="google-analytics" strategy="afterInteractive">
         {`window.dataLayer = window.dataLayer || [];
