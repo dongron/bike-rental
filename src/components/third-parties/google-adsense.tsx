@@ -13,8 +13,9 @@ const GoogleAdsense = () => {
         crossOrigin="anonymous"
         strategy="lazyOnload"
       />
-      <Script id="google-adsens">
-        {`(adsbygoogle = window.adsbygoogle || []).push({
+      <Script id="google-adsense">
+        {`let ads = window.adsbygoogle || [];
+          !ads?.loaded && ads.push({
           google_ad_client: "${clientId}",
           enable_page_level_ads: ${isEnabledOnPageLevel}
           });`}
