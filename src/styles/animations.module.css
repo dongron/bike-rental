@@ -2,6 +2,7 @@
   0% {
     transform: translateY(30%);
     opacity: 0;
+    background: rgba(0, 0, 0, 0);
   }
   100% {
     transform: translateY(0);
@@ -11,16 +12,20 @@
 
 .animateHeroImage {
   animation: 0.9s ease-in-out 0s 1 slideInFromBottom;
+  transition: background 0.9s ease-in-out;
 }
 
 .animateHeroTitle {
   animation: 1.2s ease-in-out 0s 1 slideInFromBottom;
+  transition: background 1.2s ease-in-out;
 }
 
 .animateHeroMotto {
   animation: 1.5s ease-in-out 0s 1 slideInFromBottom;
+  transition: background 1.5s ease-in-out;
 }
 
 .animateHeroCTA {
   animation: 1.8s ease-in-out 0s 1 slideInFromBottom;
+  transition: background 1.8s ease-in-out;
 }
