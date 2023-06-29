@@ -36,7 +36,7 @@ const services = [
     isVisible: false,
   },
   {
-    title: 'Integrated Frontend',
+    title: 'Custom Frontend',
     icons: [FaShopify, SiWebflow, FaWordpressSimple],
     url: getCustomTemplatesPath(),
     className: '',
