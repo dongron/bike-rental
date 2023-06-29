@@ -1,4 +1,5 @@
 // This component is imported from old version of the site
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import type { FC, ReactNode } from 'react';
 import React from 'react';
@@ -40,9 +41,13 @@ const SliderComponent: FC<SliderComponentProps> = ({ children }) => {
       <Slider {...settings}>
         <div className="slider-content">
           <div className="text-center">
-            <img
+            <Image
+              width="500"
+              height="280"
+              style={{ objectFit: 'contain' }}
               src={`${router.basePath}/assets/images/undraw_work_together_h63l.svg`}
               className={`${styles.landingPageImage} ${animations.animateHeroImage} pb-3`}
+              alt="Hero image"
             />
             <h1
               className={`p-0 ${styles.companyName} ${animations.animateHeroTitle}`}
