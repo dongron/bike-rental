@@ -2,7 +2,6 @@ import { useRouter } from 'next/router';
 
 import { ArticleBody } from '@/components/article/article-body';
 import { ArticleHero } from '@/components/article/article-hero';
-import { ContactSection } from '@/components/contact-section/contact-section';
 import { CTASection } from '@/components/cta-section';
 import { ContentWrapper } from '@/components/wrappers/content-wrapper';
 import { Meta } from '@/layouts/Meta';
@@ -61,10 +60,6 @@ const Templates = () => {
       </ContentWrapper>
 
       <CTASection />
-
-      <ContentWrapper>
-        <ContactSection className="mb-12 mt-10" />
-      </ContentWrapper>
     </Main>
   );
 };

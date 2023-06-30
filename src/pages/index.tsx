@@ -1,6 +1,5 @@
 import { AboutUsSection } from '@/components/about-us-section';
 import Contact from '@/components/contact/contact';
-import { ContactSection } from '@/components/contact-section/contact-section';
 import { CTAButton } from '@/components/cta-button';
 import { CTASection } from '@/components/cta-section';
 import { LandingGrid } from '@/components/landing-grid/landing-grid';
@@ -46,10 +45,6 @@ const Index = () => {
       </ContentWrapper>
 
       <CTASection className="mb-12 mt-10" />
-
-      <ContentWrapper>
-        <ContactSection className="mb-12 mt-10" />
-      </ContentWrapper>
     </Landing>
   );
 };

@@ -42,7 +42,7 @@ const ProjectsSectionProjects: FC<any> = () => {
               src={`${router.basePath}${project.logoSrc}`}
               style={{ objectFit: 'contain' }}
               className={`mx-auto max-h-full min-h-[100px] rounded-3xl bg-gradient-to-br
-              from-gray-300 via-gray-400 to-gray-500 p-4 shadow-sm grayscale-25`}
+              from-stone-200 via-stone-300 to-stone-300 p-4 shadow-sm grayscale-25`}
               alt={`Logo of ${project.name}`}
             />
             <h3 className="pb-4 pt-2 text-sm font-bold">{project.name}</h3>

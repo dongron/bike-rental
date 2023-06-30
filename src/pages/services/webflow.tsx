@@ -2,7 +2,6 @@ import { useRouter } from 'next/router';
 
 import { ArticleBody } from '@/components/article/article-body';
 import { ArticleHero } from '@/components/article/article-hero';
-import { ContactSection } from '@/components/contact-section/contact-section';
 import { ContentWrapper } from '@/components/wrappers/content-wrapper';
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
@@ -61,10 +60,7 @@ const Webflow = () => {
         imageUrl={`${router.basePath}${articleData.imageUrl}`}
       />
       <ContentWrapper>
-        <>
-          <ArticleBody>{articleData.body}</ArticleBody>
-          <ContactSection className="mb-12 mt-10" />
-        </>
+        <ArticleBody>{articleData.body}</ArticleBody>
       </ContentWrapper>
     </Main>
   );

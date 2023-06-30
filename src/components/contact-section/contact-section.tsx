@@ -19,7 +19,7 @@ const ContactSection: FC<ContactSectionProps> = ({ className }) => {
     <div className={`mb-2 justify-evenly md:flex ${className}`}>
       <div>
         <Image
-          width="500"
+          width="450"
           height="220"
           style={{ objectFit: 'contain' }}
           className={styles.landingPageImage}

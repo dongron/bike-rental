@@ -31,7 +31,10 @@ const FloatingBackButton: FC<FloatingBackButtonProps> = () => {
       onKeyDown={onKeyDown}
       type="button"
     >
-      <BsChevronLeft className="mx-auto inline text-gray-700/80" size={35} />
+      <BsChevronLeft
+        className="mx-auto -ml-0.5 inline text-stone-700/80"
+        size={35}
+      />
     </button>
   );
 };
