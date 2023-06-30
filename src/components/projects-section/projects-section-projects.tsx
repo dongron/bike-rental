@@ -30,7 +30,7 @@ const ProjectsSectionProjects: FC<any> = () => {
 
   return (
     <>
-      <h2 className="mb-5 mt-8 text-center text-3xl font-bold">
+      <h2 className="mb-5 mt-9 text-center text-3xl font-bold">
         {projectsTitle}
       </h2>
       <div className="projects-container grid grid-cols-3 gap-1 text-center sm:grid-cols-4 md:grid-cols-5 md:gap-4 lg:grid-cols-6">
@@ -42,7 +42,7 @@ const ProjectsSectionProjects: FC<any> = () => {
               src={`${router.basePath}${project.logoSrc}`}
               style={{ objectFit: 'contain' }}
               className={`mx-auto max-h-full min-h-[100px] rounded-3xl bg-gradient-to-br
-              from-gray-300 via-gray-500 to-gray-400 p-4 grayscale-25`}
+              from-gray-300 via-gray-400 to-gray-500 p-4 shadow-sm grayscale-25`}
               alt={`Logo of ${project.name}`}
             />
             <h3 className="pb-4 pt-2 text-sm font-bold">{project.name}</h3>
