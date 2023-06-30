@@ -20,7 +20,7 @@ const AboutUsSection: FC<AboutUsSectionProps> = ({ className }) => {
 
   return (
     <div className={className || ''}>
-      <h1 className="mb-4 text-center font-bold">{aboutHeader}</h1>
+      <h2 className="mb-4 text-center text-3xl font-bold">{aboutHeader}</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         <div className="col-span-2 grid">
           {aboutBodySections.map((section: string, idx: number) => (

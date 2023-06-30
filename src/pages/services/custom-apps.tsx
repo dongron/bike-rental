@@ -4,6 +4,7 @@ import { ArticleBody } from '@/components/article/article-body';
 import { ArticleHero } from '@/components/article/article-hero';
 import { ContactSection } from '@/components/contact-section/contact-section';
 import { CTASection } from '@/components/cta-section';
+import { ProjectsSectionProjects } from '@/components/projects-section/projects-section-projects';
 import { ContentWrapper } from '@/components/wrappers/content-wrapper';
 import { Meta } from '@/layouts/Meta';
 import { getPWAPath } from '@/routes';
@@ -53,6 +54,10 @@ const CustomApps = () => {
       />
       <ContentWrapper>
         <ArticleBody>{articleData.body}</ArticleBody>
+      </ContentWrapper>
+
+      <ContentWrapper className="mb-16 mt-8">
+        <ProjectsSectionProjects />
       </ContentWrapper>
 
       <CTASection />

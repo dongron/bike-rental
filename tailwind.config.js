@@ -16,6 +16,16 @@ module.exports = {
       '6xl': '4rem',
     },
     extend: {
+      invert: {
+        25: '.25',
+        50: '.5',
+        75: '.75',
+      },
+      grayscale: {
+        25: '25%',
+        50: '50%',
+        75: '75%',
+      },
       colors: {
         gray: {
           100: '#f7fafc',
@@ -53,7 +63,18 @@ module.exports = {
           800: '#fb6d0c',
           900: '#fb6c0a',
         },
-        brandPurple: '#943cff',
+        brandPurpleDefault: '#943cff',
+        brandPurple: {
+          100: '#dfc5ff',
+          200: '#d5b2ff',
+          300: '#bf8aff',
+          400: '#b477ff',
+          500: '#aa63ff',
+          600: '#9f50ff',
+          700: '#8928ff',
+          800: '#7e15ff',
+          900: '#7401ff',
+        },
         brandPink: '#dd45d3',
         white: '#fff',
       },
