@@ -21,7 +21,7 @@ const projects = [
   { name: 'Pistons', logoSrc: `/assets/images/clients/pistons-logo.svg` },
   {
     name: 'The Guru Museum System',
-    logoSrc: `/assets/images/clients/guru-logo-2.png`,
+    logoSrc: `/assets/images/clients/guru-logo.png`,
   },
 ];
 
