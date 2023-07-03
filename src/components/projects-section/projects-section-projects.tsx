@@ -7,6 +7,7 @@ const projects = [
   {
     name: 'Evolve Edits',
     logoSrc: `/assets/images/clients/evolve-logo.svg`,
+    isWhiteLogo: true,
   },
   {
     name: 'Plunjr',
@@ -17,7 +18,11 @@ const projects = [
     name: 'Credit & Debt',
     logoSrc: `/assets/images/clients/credit-and-debt-logo.svg`,
   },
-  { name: 'Alice Home', logoSrc: `/assets/images/clients/alice-home-logo.svg` },
+  {
+    name: 'Alice Home',
+    logoSrc: `/assets/images/clients/alice-home-logo.svg`,
+    isWhiteLogo: true,
+  },
   { name: 'Pistons', logoSrc: `/assets/images/clients/pistons-logo.svg` },
   {
     name: 'The Guru Museum System',
@@ -42,7 +47,13 @@ const ProjectsSectionProjects: FC<any> = () => {
               src={`${router.basePath}${project.logoSrc}`}
               style={{ objectFit: 'contain' }}
               className={`mx-auto max-h-full min-h-[100px] rounded-3xl bg-gradient-to-br
-              from-stone-200 via-stone-300 to-stone-300 p-4 shadow-sm grayscale-25`}
+              p-4 shadow-sm grayscale-25
+              ${
+                project.isWhiteLogo
+                  ? 'from-brandPurple-500 via-brandPurple-500 to-brandPurple-600'
+                  : 'from-brandPurpleLight-200 via-brandPurpleLight-200 to-brandPurpleLight-300'
+              }
+              `}
               alt={`Logo of ${project.name}`}
             />
             <h3 className="pb-4 pt-2 text-sm font-bold">{project.name}</h3>

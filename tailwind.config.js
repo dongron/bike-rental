@@ -64,6 +64,17 @@ module.exports = {
           900: '#fb6c0a',
         },
         brandPurpleDefault: '#943cff',
+        brandPurpleLight: {
+          100: '#f5edff',
+          200: '#ead9ff',
+          300: '#dfc5ff',
+          400: '#d5b2ff',
+          500: '#ca9eff',
+          600: '#bf8aff',
+          700: '#b477ff',
+          800: '#aa63ff',
+          900: '#9f50ff',
+        },
         brandPurple: {
           100: '#dfc5ff',
           200: '#d5b2ff',
