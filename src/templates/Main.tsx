@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 import { Footer } from '@/components/footer';
-import { Navbar } from '@/components/navbar';
+import { Navbar } from '@/components/navbar/navbar';
 
 type IMainProps = {
   meta: ReactNode;

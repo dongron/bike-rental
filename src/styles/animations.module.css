@@ -10,6 +10,22 @@
   }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    background: rgba(0, 0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.animateNavbar {
+  animation: 0.9s ease-in-out 0s 1 fadeIn;
+  transition: background 0.9s ease-in-out;
+}
+
 .animateHeroImage {
   animation: 0.9s ease-in-out 0s 1 slideInFromBottom;
   transition: background 0.9s ease-in-out;
