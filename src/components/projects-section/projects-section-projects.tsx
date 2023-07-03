@@ -50,8 +50,8 @@ const ProjectsSectionProjects: FC<any> = () => {
               p-4 shadow-sm grayscale-25
               ${
                 project.isWhiteLogo
-                  ? 'from-brandPurple-500 via-brandPurple-500 to-brandPurple-600'
-                  : 'from-brandPurpleLight-200 via-brandPurpleLight-200 to-brandPurpleLight-300'
+                  ? 'from-brandPurpleLight-500 via-brandPurple-500 to-brandPurple-500'
+                  : 'from-brandPurpleLight-500 via-brandPurpleLight-200 to-brandPurple-500'
               }
               `}
               alt={`Logo of ${project.name}`}
