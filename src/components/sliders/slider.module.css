@@ -15,8 +15,8 @@
 
 .landingSliderContainer {
   min-height: 100svh;
-  padding-top: 0;
-  padding-bottom: 6rem;
+  padding-top: 1rem;
+  padding-bottom: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
