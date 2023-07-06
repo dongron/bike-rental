@@ -1,3 +1,5 @@
+import { useRouter } from 'next/router';
+
 import { AboutUsSection } from '@/components/about-us-section';
 import Contact from '@/components/contact/contact';
 import { CTAButton } from '@/components/cta-button';
@@ -12,6 +14,8 @@ import { Landing } from '@/templates/Landing';
 import { appConfig } from '@/utils/AppConfig';
 
 const Index = () => {
+  const router = useRouter();
+
   return (
     <Landing
       meta={
@@ -22,7 +26,10 @@ const Index = () => {
       }
     >
       <Slider>
-        <Contact source="landing-header">
+        <Contact
+          source="landing-header"
+          forceIsDialogOpen={!!router.query.contactForm}
+        >
           <CTAButton className={`my-9 ${animations.animateHeroCTA}`}>
             Talk to Our Team
           </CTAButton>

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useRouter } from 'next/router';
 import type { FC, JSXElementConstructor, ReactElement } from 'react';
 import { cloneElement, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
@@ -16,12 +17,24 @@ type RequestType = {
 type ContactProps = {
   children: ReactElement<any, string | JSXElementConstructor<any>>;
   source?: string;
+  forceIsDialogOpen?: boolean;
 };
 
-const Contact: FC<ContactProps> = ({ source, children }) => {
+const Contact: FC<ContactProps> = ({ source, forceIsDialogOpen, children }) => {
+  const router = useRouter();
+
   const [request, setRequest] = useState<RequestType>({ status: null });
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [resetForm, setResetForm] = useState<number | undefined>();
+
+  const handleSetIsDialogOpen = (newVal: boolean) => {
+    if (forceIsDialogOpen && !newVal) {
+      if (!newVal && Object.hasOwn(router.query, 'contactForm'))
+        delete router.query.contactForm;
+      router.push(router, undefined, { shallow: true });
+      setIsDialogOpen(false);
+    } else setIsDialogOpen(newVal);
+  };
 
   const onSubmit = async (data: any) => {
     setRequest({ status: RequestStatus.status.FETCHING });
@@ -32,13 +45,17 @@ const Contact: FC<ContactProps> = ({ source, children }) => {
     })
       .then((response: any) => {
         setRequest({ status: RequestStatus.status.DONE });
-        setIsDialogOpen(false);
+        handleSetIsDialogOpen(false);
         toast.success(response.data?.message);
       })
       .catch(() => {
         setRequest({ status: RequestStatus.status.ERROR });
       });
   };
+
+  useEffect(() => {
+    if (forceIsDialogOpen) handleSetIsDialogOpen(forceIsDialogOpen);
+  }, [forceIsDialogOpen]);
 
   useEffect(() => {
     if (!isDialogOpen) setResetForm(new Date().getTime());
@@ -49,7 +66,7 @@ const Contact: FC<ContactProps> = ({ source, children }) => {
       <SimpleDialog
         dialogId={dialogId}
         open={isDialogOpen}
-        setOpen={setIsDialogOpen}
+        setOpen={handleSetIsDialogOpen}
         requestStatus={request.status}
       >
         <>
@@ -61,7 +78,7 @@ const Contact: FC<ContactProps> = ({ source, children }) => {
           />
         </>
       </SimpleDialog>
-      {cloneElement(children, { onClick: () => setIsDialogOpen(true) })}
+      {cloneElement(children, { onClick: () => handleSetIsDialogOpen(true) })}
     </>
   );
 };
